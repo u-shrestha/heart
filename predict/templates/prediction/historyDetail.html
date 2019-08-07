@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page-title %}
+    History
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    <div class="container">
+        <div class="row" >
+            <div class="card col-6">
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <td>Name: </td>
+                            <td>{{ data.name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Date: </td>
+                            <td>{{ data.created }}</td>
+                        </tr>
+                        <tr>
+                            <td>Age: </td>
+                            <td>{{ data.age }}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender: </td>
+                            <td>{{ data.sex }}</td>
+                        </tr>
+                        <tr>
+                            <td>chest_pain_type: </td>
+                            <td>{{ data.chest_pain_type }}</td>
+                        </tr>
+                        <tr>
+                            <td>resting_bloodpressure: </td>
+                            <td>{{ data.resting_bloodpressure }}</td>
+                        </tr><tr>
+                            <td>serum_cholestrol: </td>
+                            <td>{{ data.serum_cholestrol }}</td>
+                        </tr>
+                        <tr>
+                            <td>fasting_blood_sugar: </td>
+                            <td>{{ data.fasting_blood_sugar }}</td>
+                        </tr>
+                        <tr>
+                            <td>resting_ecg: </td>
+                            <td>{{ data.resting_ecg }}</td>
+                        </tr>
+                        <tr>
+                            <td>max_heartrate: </td>
+                            <td>{{ data.max_heartrate }}</td>
+                        </tr>
+                        <tr>
+                            <td>exercise_induced_angina: </td>
+                            <td>{{ data.exercise_induced_angina }}</td>
+                        </tr>
+                        <tr>
+                            <td>oldpeak: </td>
+                            <td>{{ data.oldpeak }}</td>
+                        </tr>
+                        <tr>
+                            <td>slope: </td>
+                            <td>{{ data.slope }}</td>
+                        </tr>
+                        <tr>
+                            <td>no_of_major_vessel: </td>
+                            <td>{{ data.no_of_major_vessel }}</td>
+                        </tr>
+                        <tr>
+                            <td>thalassemia: </td>
+                            <td>{{ data.thalassemia }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+         </div>
+    </div>
+{% endblock %}
+
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+
+<!-- age = models.IntegerField(default=0)-->
+<!--    sex = models.IntegerField(default=0)-->
+<!--    chest_pain_type = models.FloatField(default=0)-->
+<!--    resting_bloodpressure = models.FloatField(default=0)-->
+<!--    serum_cholestrol = models.FloatField(default=0)-->
+<!--    fasting_blood_sugar = models.FloatField(default=0)-->
+<!--    resting_ecg = models.FloatField(default=0)-->
+<!--    max_heartrate = models.FloatField(default=0)-->
+<!--    exercise_induced_angina = models.FloatField(default=0)-->
+<!--    oldpeak = models.FloatField(default=0)-->
+<!--    slope = models.FloatField(default=0)-->
+<!--    no_of_major_vessel = models.FloatField(default=0)-->
+<!--    thalassemia = models.FloatField(default=0)-->

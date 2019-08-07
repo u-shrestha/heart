@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page-title %}
+    History
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+       <div class="row">
+            {% for history in history_list %}
+             {% if history.name == request.user %}
+              <div class="col-md-6">
+                  <div class="img-thumbnail">
+                      Date:{{ history.created }}
+                      <br>
+                      <a href="{% url 'history_detail' history.id %}">DETAIL</a>
+                      <br>
+                  </div>
+              </div>
+
+             {% endif %}
+            {% endfor %}
+        </div>
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page-title %}
+    Sign Up
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    <div class="container">
+        <div class="row">
+            <div class = "col-sm-12 col-md-6 col-lg-6">
+                <div class="card">
+                    <h2 class="card-title">Sign Up</h2>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for hidden_field in form.hidden_fields %}
+                                {{ hidden_field }}
+                            {% endfor %}
+                            {% for field in form.visible_fields %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {% render_field field class="form-control" placeholder=field.label %}
+                                </div>
+                            {% endfor %}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}

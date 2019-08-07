@@ -1,0 +1,31 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <link href="{% static 'vendor/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+{#        {{ form.as_p }}#}
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {% render_field field class="form-control" placeholder=field.label %}
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Predict</button>
+{#            <br><small>Don't have an account?<a href="{% url 'register' %}"> Register Here</a> first.</small>#}
+        </div>
+    </form>
+</body>
+</html>

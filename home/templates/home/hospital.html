@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+    Lists
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    <h2 class="text-center">
+        <i class="fas fa-quote-left"></i>
+            Hospitals
+        <i class="fas fa-quote-right"></i>
+        <hr class="mx-auto">
+    </h2>
+
+    <div class="container">
+        <div class="row mb-3">
+            {% for hospital in hlist %}
+                <div class="col-sm-6 col-md-6 col-lg-12">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                        {% if hospital.image.url %}
+                        <img src="{{ hospital.image.url }}" alt="photo" class="card-img-right flex-auto d-none d-md-block">
+                        {% endif %}
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="card-title">{{ hospital.name }}</h3>
+
+                            <p class="card-text">{{ hospital.location }}</p>
+
+                            <span>{{ hospital.phone_number }};</span>
+                            {% if hospital.phone_number2 %}
+                                <span>{{ hospital.phone_number2 }};</span>
+                            {% endif %}
+                            {% if hospital.phone_number3 %}
+                                <span>{{ hospital.phone_number3 }};</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}

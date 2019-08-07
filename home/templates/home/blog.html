@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+    Articles
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    <h2 class="text-center">
+        <i class="fas fa-quote-left"></i>
+            Blogs
+        <i class="fas fa-quote-right"></i>
+        <hr class="mx-auto">
+    </h2>
+	<div class="container">
+		<div class="row mt-3">
+            {% for article in article_list_filter %}
+			<div class="col-lg-4 col-md-4 col-sm-4 mb-3">
+				<div class="card">
+					<img class="card-img-top" src="{{ article.image.url }}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">{{ article.title }}
+                        <br><small><i class="fas fa-calendar-alt"></i> {{ article.date }}</small>
+                        </h5>
+						<a href="/blogs/{{ article.id }}" class="btn btn-primary">Read more</a>
+					</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}
