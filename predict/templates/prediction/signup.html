@@ -11,11 +11,12 @@
 {% endblock %}
 
 {% block page-body %}
-    <div class="container">
-        <div class="row">
-            <div class = "col-sm-12 col-md-6 col-lg-6">
+    <div class="container mt-3 mb-3">
+{#        <div class="login-form">#}
+        <div class="row justify-content-around">
+            <div class = "col-sm-12 col-md-8 col-lg-6">
                 <div class="card">
-                    <h2 class="card-title">Sign Up</h2>
+                    <h2 class="card-header text-center">Sign Up</h2>
                     <div class="card-body">
                         <form method="post">
                             {% csrf_token %}
@@ -25,10 +26,14 @@
                             {% for field in form.visible_fields %}
                                 <div class="form-group">
                                     {{ field.label_tag }}
-                                    {% render_field field class="form-control" placeholder=field.label %}
+                                    {% if field.label == "Gender" %}
+                                        {% render_field field %}
+                                    {% else %}
+                                        {% render_field field class="form-control" placeholder=field.label %}
+                                    {% endif %}
                                 </div>
                             {% endfor %}
-                            <div class="form-group">
+                            <div class="col-md-6 offset-4">
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
                         </form>

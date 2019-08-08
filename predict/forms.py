@@ -9,6 +9,11 @@ from django.contrib.auth import (
 
 )
 
+gender = (
+        ('1', 'Male'),
+        ('0', 'Female')
+)
+
 User = get_user_model()
 
 
@@ -38,26 +43,39 @@ class UserLoginForm(forms.Form):
 
 
 class UserRegisterForm(forms.ModelForm):
-    email = forms.EmailField(label='Email address')
-    email2 = forms.EmailField(label='Confirm Email')
+    username = forms.CharField(max_length=50)
+    email_address = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
+    date_of_birth = forms.DateField(widget=forms.DateTimeInput(attrs={'type':'date'}))
+    gender = forms.ChoiceField(widget=forms.RadioSelect, choices=gender)
 
     class Meta:
         model = User
         fields = [
             'username',
-            'email',
-            'email2',
-            'password'
+            'email_address',
+            'password',
+            'confirm_password',
+            'date_of_birth',
+            'gender'
         ]
 
     def clean(self, *args, **kwargs):
         email = self.cleaned_data.get('email')
-        email2 = self.cleaned_data.get('email2')
-        if email != email2:
-            raise forms.ValidationError("Emails must match")
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data.get('confirm_password')
+
+        if password != confirm_password:
+            raise forms.ValidationError("Password mismatch")
+
+        username_qs = User.objects.filter(username=username)
         email_qs = User.objects.filter(email=email)
+
         if email_qs.exists():
-            raise forms.ValidationError(
-                "This email has already been registered")
+            raise forms.ValidationError("This email has already been registered")
+
+        if username_qs.exists():
+            raise forms.ValidationError("Username already exists")
         return super(UserRegisterForm, self).clean(*args, **kwargs)

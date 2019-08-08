@@ -5,6 +5,7 @@ from .models import Heart
 from .forms import Heart_form
 from predict import predict
 from .forms import UserLoginForm, UserRegisterForm
+from django.contrib import messages
 from django.contrib.auth import (
     authenticate,
     get_user_model,
@@ -48,6 +49,7 @@ def index(request):
         fin.append(no_of_major_vessel)
         thalassemia = data.__getitem__('thalassemia')
         fin.append(thalassemia)
+
         if form.is_valid():
             form.save(commit=True)
             result = heart_predict(request)
@@ -73,18 +75,25 @@ def heart_predict(request):
 def login_view(request):
     if request.user.is_authenticated:
         return render(request, "prediction/dashboard.html")
-    next = request.GET.get('next')
+    # next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
     if form.is_valid():
+        print("in")
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
-        login(request, user)
-        if next:
-            return redirect(next)
-        return render(request, "prediction/dashboard.html")
+        if user is not None:
+            login(request, user)
+            return render(request, "prediction/dashboard.html")
 
-    context = {'form': form}
+    # if form.is_valid() == False:
+    #     print("error")
+    #     messages.error(request, 'username or password not correct')
+    #     context = {'form': form }
+    #     return render(request, "prediction/login.html", context)
+
+    print("out")
+    context = {'form': form }
     return render(request, "prediction/login.html", context)
 
 
