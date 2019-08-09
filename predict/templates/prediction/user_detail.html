@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page-title %}
+    Log In
+{% endblock %}
+
+{% block page-header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    {% for i in list %}
+        <span>{{ i.username }}</span><br>
+        <span>{{ i.email_address }}</span><br>
+        <span>{{ i.date_of_birth }}</span><br>
+        <span>{{ i.gender }}</span><br><br>
+    {% endfor %}
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}

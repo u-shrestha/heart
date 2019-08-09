@@ -1,11 +1,11 @@
 .navbar-dark .navbar-nav .nav-link {
-	font-size: 22px;
+	font-size: 18px;
 	color: #fff;
 	border-bottom: 3px solid transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-	font-size: 22px;
+	font-size: 18px;
 	color: #fff;
 	border-bottom: 3px solid;
 }
