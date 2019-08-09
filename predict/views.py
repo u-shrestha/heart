@@ -121,8 +121,8 @@ def register_view(request):
             new_user = Register.objects.create(username= username, email_address= email_address,
                                                password=password, confirm_password=confirm_password,
                                                date_of_birth=date_of_birth, gender=gender)
-            new_user.save()
 
+            new_user.save()
             login(request, User.objects.create_user(username, email_address, password))
             return redirect('dashboard')
         else:
