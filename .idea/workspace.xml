@@ -4,19 +4,16 @@
     <list default="true" id="7d9eb115-1a31-4a73-a5bd-2448f8492036" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/templates/home/blog_detail.html" afterPath="$PROJECT_DIR$/home/templates/home/blog_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/templates/home/hospital.html" afterPath="$PROJECT_DIR$/home/templates/home/hospital.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/admin.py" afterPath="$PROJECT_DIR$/predict/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/forms.py" afterPath="$PROJECT_DIR$/predict/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/models.py" afterPath="$PROJECT_DIR$/predict/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/purls.py" afterPath="$PROJECT_DIR$/predict/purls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/dashboard.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/history.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/history.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/historyDetail.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/historyDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/login.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/result.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/result.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/predict.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/predict.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/templates/prediction/signup.html" afterPath="$PROJECT_DIR$/predict/templates/prediction/signup.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predict/views.py" afterPath="$PROJECT_DIR$/predict/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/footer.html" afterPath="$PROJECT_DIR$/templates/footer.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,13 +25,27 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/heart$simple_ml.coverage" NAME="simple_ml Coverage Results" MODIFIED="1564741959101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AAA practise/Python_for_Data_Science-master" />
     <SUITE FILE_PATH="coverage/heart$main.coverage" NAME="main Coverage Results" MODIFIED="1564737979448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AAA practise/C4.5/c45" />
+    <SUITE FILE_PATH="coverage/heart$lineplot.coverage" NAME="lineplot Coverage Results" MODIFIED="1565337286009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/predict" />
     <SUITE FILE_PATH="coverage/heart$simple_decision_tree.coverage" NAME="simple_decision_tree Coverage Results" MODIFIED="1564742632616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AAA practise/Python_for_Data_Science-master" />
     <SUITE FILE_PATH="coverage/heart$class.coverage" NAME="class Coverage Results" MODIFIED="1564742363070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AAA practise/Python_for_Data_Science-master" />
     <SUITE FILE_PATH="coverage/heart$dict.coverage" NAME="dict Coverage Results" MODIFIED="1564743094517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../AAA practise/practice" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/predict/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="182" column="2" lean-forward="false" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,9 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/article/static/css/homepage.css" />
-        <option value="$PROJECT_DIR$/article/models.py" />
-        <option value="$PROJECT_DIR$/article/admin.py" />
         <option value="$PROJECT_DIR$/article/aurls.py" />
         <option value="$PROJECT_DIR$/article/views.py" />
         <option value="$PROJECT_DIR$/article/templates/article/article.html" />
@@ -96,26 +104,29 @@
         <option value="$PROJECT_DIR$/heart/urls.py" />
         <option value="$PROJECT_DIR$/predict/templates/prediction/logout.html" />
         <option value="$PROJECT_DIR$/predict/templates/prediction/index.html" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/history.html" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/historyDetail.html" />
         <option value="$PROJECT_DIR$/home/templates/home/blog.html" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/signup.html" />
         <option value="$PROJECT_DIR$/templates/header.html" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/predict.html" />
         <option value="$PROJECT_DIR$/home/templates/home/hospital.html" />
         <option value="$PROJECT_DIR$/home/templates/home/blog_detail.html" />
         <option value="$PROJECT_DIR$/predict/admin.py" />
-        <option value="$PROJECT_DIR$/predict/forms.py" />
         <option value="$PROJECT_DIR$/predict/models.py" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/login.html" />
-        <option value="$PROJECT_DIR$/predict/purls.py" />
         <option value="$PROJECT_DIR$/predict/templates/prediction/user_detail.html" />
-        <option value="$PROJECT_DIR$/predict/views.py" />
-        <option value="$PROJECT_DIR$/predict/templates/prediction/dashboard.html" />
         <option value="$PROJECT_DIR$/predict/templates/prediction/result.html" />
+        <option value="D:/Python Django/ecommerce_project/categories/templates/categories/categories.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/footer.html" />
+        <option value="$PROJECT_DIR$/predict/lineplot.py" />
+        <option value="$PROJECT_DIR$/predict/forms.py" />
+        <option value="$PROJECT_DIR$/predict/purls.py" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/login.html" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/signup.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/change_password.html" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/dashboard.html" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/history.html" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/historyDetail.html" />
+        <option value="$PROJECT_DIR$/predict/templates/prediction/predict.html" />
+        <option value="$PROJECT_DIR$/predict/views.py" />
       </list>
     </option>
   </component>
@@ -158,6 +169,88 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="predict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -181,26 +274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dict">
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../AAA practise/C4.5/c45" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="heart" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../AAA practise/C4.5/c45/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.lineplot">
     <configuration default="false" name="simple_decision_tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -272,6 +346,25 @@
       <module name="heart" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../AAA practise/practice/dict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="lineplot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/predict" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="heart" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Sakun\Desktop\Project\heart\predict\history.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -474,19 +567,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Django server.heart" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main" />
-      <item index="2" class="java.lang.String" itemvalue="Python.simple_decision_tree" />
-      <item index="3" class="java.lang.String" itemvalue="Python.simple_ml" />
-      <item index="4" class="java.lang.String" itemvalue="Python.class" />
-      <item index="5" class="java.lang.String" itemvalue="Python.dict" />
+      <item index="1" class="java.lang.String" itemvalue="Python.simple_decision_tree" />
+      <item index="2" class="java.lang.String" itemvalue="Python.simple_ml" />
+      <item index="3" class="java.lang.String" itemvalue="Python.class" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dict" />
+      <item index="5" class="java.lang.String" itemvalue="Python.lineplot" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.dict" />
-        <item index="1" class="java.lang.String" itemvalue="Python.simple_decision_tree" />
-        <item index="2" class="java.lang.String" itemvalue="Python.class" />
-        <item index="3" class="java.lang.String" itemvalue="Python.simple_ml" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.lineplot" />
+        <item index="1" class="java.lang.String" itemvalue="Python.dict" />
+        <item index="2" class="java.lang.String" itemvalue="Python.simple_decision_tree" />
+        <item index="3" class="java.lang.String" itemvalue="Python.class" />
+        <item index="4" class="java.lang.String" itemvalue="Python.simple_ml" />
       </list>
     </recent_temporary>
   </component>
@@ -505,14 +598,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18759455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18759455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17348608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27986908" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4091653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -559,11 +653,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ddlist/templates/ddlist/ddlist.html" />
-    <entry file="file://$PROJECT_DIR$/article/views.py" />
-    <entry file="file://$PROJECT_DIR$/ddlist/views.py" />
-    <entry file="file://$PROJECT_DIR$/hdlist/views.py" />
-    <entry file="file://$PROJECT_DIR$/article/aurls.py" />
     <entry file="file://$PROJECT_DIR$/home/templates/home/doctor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -635,6 +724,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -649,14 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,14 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/historyDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -778,32 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/predict/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/purls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/heart/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
@@ -816,22 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/predict.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="78" lean-forward="false" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -852,42 +884,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/dashboard.html">
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/nbconvert/resources/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="68">
+          <caret line="3507" column="1" lean-forward="false" selection-start-line="3507" selection-start-column="1" selection-end-line="3507" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="42">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/history.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/django/contrib/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="342" column="6" lean-forward="false" selection-start-line="342" selection-start-column="6" selection-end-line="342" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/purls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="84" lean-forward="false" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding>
+            <element signature="e#1659#1665#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="273">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/predict.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/historyDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="108" column="10" lean-forward="false" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python Django/ecommerce_project/categories/templates/categories/categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict/templates/prediction/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/predict/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="263">
+          <caret line="182" column="2" lean-forward="false" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="2" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>

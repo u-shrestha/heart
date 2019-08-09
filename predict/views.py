@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-
 from django.http import HttpResponse
 from .models import Heart, Register
 from .forms import Heart_form
@@ -8,7 +7,10 @@ from .forms import UserLoginForm, UserRegisterForm
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, get_user_model, login, logout
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 fin = []
@@ -79,7 +81,7 @@ def heart_predict(request):
     return render(request, "prediction/result.html", {'fin': val})
 
 
-
+# view for user login
 def login_view(request):
     if request.user.is_authenticated:
         return render(request, "prediction/dashboard.html")
@@ -102,7 +104,7 @@ def login_view(request):
     return render(request, "prediction/login.html", context)
 
 
-
+#view for user registration
 def register_view(request):
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():
@@ -115,6 +117,7 @@ def register_view(request):
         gender = userObj['gender']
 
         if not (User.objects.filter(username=username).exists() or User.objects.filter(email=email_address).exists()):
+            #saving the data of new user in database
             new_user = Register.objects.create(username= username, email_address= email_address,
                                                password=password, confirm_password=confirm_password,
                                                date_of_birth=date_of_birth, gender=gender)
@@ -132,8 +135,39 @@ def register_view(request):
     return render(request, "prediction/signup.html", context)
 
 
+#view for changing current password
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            # retriving username and new passwords to update it in model
+            username_user = str(User.objects.filter(username=request.user).get())
+            username_register = str(Register.objects.filter(username=username_user).get())
+            userObj = form.cleaned_data
+            password = userObj['new_password1']
+            confirm_password = userObj['new_password2']
+
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+
+            #updating the passwords in models
+            if (username_user == username_register):
+                Register.objects.update(password=password, confirm_password=confirm_password)
+
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'prediction/change_password.html', {'form': form })
+
+
 def dashboard(request):
     return render(request, 'prediction/dashboard.html')
+
 
 def history(request):
     history_list = Heart.objects.all()
@@ -143,12 +177,10 @@ def history(request):
 
 def history_detail(request,id):
     data=get_object_or_404(Heart,id=id)
-    context={
-        'data':data,
-    }
+    context={'data':data }
     return render(request,'prediction/historyDetail.html',context)
 
-
+# logout user
 def logout_view(request):
     logout(request)
     return redirect('login')

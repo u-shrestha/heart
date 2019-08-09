@@ -40,18 +40,25 @@ button.btn.btn-primary {
 	color: #fff;
 }
 
+a.btn.btn-primary {
+	background-color: #a91623;
+    border-color: #a91623;
+	font-size: 18px;
+	color: #fff;
+}
+
 .btn-primary.focus, .btn-primary:focus {
 	box-shadow: none;
 }
 
-a.btn.btn-primary.dashboard {
-	background-color: #a91623;
-    border-color: #ad0411;
-	font-size: 20px;
-	color: #fff;
-	width: 100%;
-	height: 150px;
-}
+/*a.btn.btn-primary.dashboard {*/
+	/*background-color: #a91623;*/
+    /*border-color: #ad0411;*/
+	/*font-size: 20px;*/
+	/*color: #fff;*/
+	/*width: 100%;*/
+	/*height: 150px;*/
+/*}*/
 
 /*a.btn.btn-danger.dashboard {*/
 	/*font-size: 18px;*/
@@ -60,17 +67,17 @@ a.btn.btn-primary.dashboard {
 	/*height: 130px;*/
 /*}*/
 
-a.btn.btn-info.dashboard {
-	font-size: 18px;
-	color: #fff;
-	width: 100%;
-	height: 130px;
-}
+/*a.btn.btn-info.dashboard {*/
+	/*font-size: 18px;*/
+	/*color: #fff;*/
+	/*width: 100%;*/
+	/*height: 130px;*/
+/*}*/
 
 
-a.btn.btn-primary.dashboard:hover  {
-	background-color: #a91623;
-}
+/*a.btn.btn-primary.dashboard:hover  {*/
+	/*background-color: #a91623;*/
+/*}*/
 
 /*a.btn.btn-danger.dashboard:hover {*/
 	/*background-color: #a91623;*/
@@ -180,4 +187,8 @@ h1 {
 
 a.signup {
     font-weight: 600;
+}
+
+.dropdown-menu {
+	min-width: 15rem;
 }

@@ -98,23 +98,3 @@ class UserRegisterForm(ModelForm):
             'date_of_birth',
             'gender',
         ]
-
-    # def clean(self, *args, **kwargs):
-    #     email = self.cleaned_data.get('email')
-    #     username = self.cleaned_data.get('username')
-    #     password = self.cleaned_data.get('password')
-    #     confirm_password = self.cleaned_data.get('confirm_password')
-    #
-    #     if password != confirm_password:
-    #         raise forms.ValidationError("Password mismatch")
-    #
-    #     username_qs = User.objects.filter(username=username)
-    #     email_qs = User.objects.filter(email=email)
-    #
-    #     if email_qs.exists():
-    #         raise forms.ValidationError("This email has already been registered")
-    #
-    #     if username_qs.exists():
-    #         raise forms.ValidationError("Username already exists")
-    #
-    #     return super(UserRegisterForm, self).clean(*args, **kwargs)
