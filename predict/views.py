@@ -121,7 +121,7 @@ def register_view(request):
         date_of_birth = userObj['date_of_birth']
         gender = userObj['gender']
 
-        if not (User.objects.filter(username=username).exists()):
+        if not (User.objects.filter(username=username).exists() or User.objects.filter(email=email_address).exists()):
             #saving the data of new user in database
             new_user = Register.objects.create(username= username, email_address= email_address,
                                                password=password, confirm_password=confirm_password,

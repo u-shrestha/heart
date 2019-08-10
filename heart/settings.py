@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'predict',
     'widget_tweaks',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
