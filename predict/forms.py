@@ -1,10 +1,9 @@
 from django.forms import ModelForm
-from .models import Heart, Register
-from django.core.exceptions import ValidationError
+from .models import Heart
 from django import forms
-from django.db import models
 from django.contrib.auth import authenticate, get_user_model
 
+# choices for prediction form
 gender = [
         ('1', 'Male'),
         ('0', 'Female')
@@ -98,3 +97,10 @@ class UserRegisterForm(ModelForm):
             'date_of_birth',
             'gender',
         ]
+
+    def save(self, commit=True):
+        user = super(UserRegisterForm, self).save(commit=False)
+        user.email = self.cleaned_data["email_address"]
+        if commit:
+            user.save()
+        return user

@@ -11,4 +11,6 @@ urlpatterns = [
     path('myhistory/', views.history, name='history'),
     path('myhistory/<id>/', views.history_detail, name='history_detail'),
     path('user/', views.user, name='user'),
+    path('activate/(P<uidb64>[0-9A-Za-z_\\-]+)/(P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
+         views.activate, name='activate')
 ]

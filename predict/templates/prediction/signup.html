@@ -20,6 +20,14 @@
                     <div class="card-body">
                         <form method="post">
                             {% csrf_token %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                <div class="alert alert-danger">
+                                    <a class="close" href="#" data-dismiss="alert">×</a>
+                                        {{ message }}
+                                </div>
+                                {% endfor %}
+                            {% endif %}
                             {% for hidden_field in form.hidden_fields %}
                                 {{ hidden_field }}
                             {% endfor %}
