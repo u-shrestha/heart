@@ -3,15 +3,13 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('login', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-    path('signup/', views.register_view, name='signup'),
-    path('myaccount/changepassword/', views.change_password, name='changepassword'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('predict/', views.index, name='predict'),
+    path('', views.dashboard, name='dashboard'),
+    path('changepassword/', views.change_password, name='changepassword'),
+    path('predict_disease/', views.index, name='predict'),
     path('myhistory/', views.history, name='history'),
     path('myhistory/<id>/', views.history_detail, name='history_detail'),
-    path('user/', views.user, name='user'),
+    path('attribute/', views.attribute, name='attribute'),
+    path('user/<user_id>', views.user, name='user'),
     path('activate/(P<uidb64>[0-9A-Za-z_\\-]+)/(P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          views.activate, name='activate'),
 

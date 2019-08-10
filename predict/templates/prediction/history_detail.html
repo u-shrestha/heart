@@ -29,7 +29,7 @@
                             </div>
                             <a href="{% url 'history' %}" class="list-group-item">My History</a>
                             <a href="{% url 'predict' %}" class="list-group-item">Predict Heart Disease</a>
-                            <a href="#" class="list-group-item">Learn about attributes used in prediction</a>
+                            <a href="{% url 'attribute' %}" class="list-group-item">Learn about attributes used in prediction</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
 
             <div class="col">
                 <div class="row" >
-                    <div class="card col-6">
+                    <div class="card col-6 col-sm-12">
                         <div class="card-body">
                             <table>
                                 <tr>
@@ -110,9 +110,9 @@
 {% endblock %}
 
 
-{% block page-footer %}
-    {% include 'footer.html' %}
-{% endblock %}
+{#{% block page-footer %}#}
+{#    {% include 'footer.html' %}#}
+{#{% endblock %}#}
 
 
 <!-- age = models.IntegerField(default=0)-->

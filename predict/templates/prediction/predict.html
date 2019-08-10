@@ -29,7 +29,7 @@
                             </div>
                             <a href="{% url 'history' %}" class="list-group-item">My History</a>
                             <a href="{% url 'predict' %}" class="list-group-item">Predict Heart Disease</a>
-                            <a href="#" class="list-group-item">Learn about attributes used in prediction</a>
+                            <a href="{% url 'attribute' %}" class="list-group-item">Learn about attributes used in prediction</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
 
             <div class="col">
                 <div class="row">
-                    <div class="container mt-3 mb-3">
+                    <div class="container mb-3">
                         <div class="row justify-content-around">
                             <div class="col-sm-12">
                                 <div class="card">
@@ -51,8 +51,22 @@
                                             {% endfor %}
                                             {% for field in form.visible_fields %}
                                                 <div class="form-group">
-                                                    {{ field.label_tag }}
-                                                    {% render_field field class="form-control" %}
+
+                                                    {% if field.label == 'Name' %}
+                                                        {% if user.is_authenticated %}
+                                                            {{ field.label_tag }}
+                                                            {% render_field field class="form-control" %}
+                                                        {% endif %}
+
+                                                    {% else %}
+                                                        {{ field.label_tag }}
+                                                        {% if field.label == 'Age' or field.label == 'Sex' %}
+                                                            {% render_field field class="form-control"  %}
+                                                        {% else %}
+                                                            {% render_field field class="form-control" %}
+                                                        {% endif %}
+
+                                                    {% endif %}
                                                 </div>
                                             {% endfor %}
                                             <div class="form-group">
@@ -73,6 +87,6 @@
 {% endblock %}
 
 
-{% block page-footer %}
-    {% include 'footer.html' %}
-{% endblock %}
+{#{% block page-footer %}#}
+{#    {% include 'footer.html' %}#}
+{#{% endblock %}#}

@@ -12,7 +12,7 @@ clf = clf.fit(samples, sample_classes)
 def predict(li):
 	input_data = np.array(li).reshape(1, -1)
 	result = clf.predict(input_data)
-
+	print(result)
 	if result == 0:
 		return "false"
 	else:

@@ -48,6 +48,7 @@ User = get_user_model()
 
 
 class Heart_form(ModelForm):
+    # name = forms.CharField(max_length=50)
     chest_pain_type = forms.ChoiceField(widget=forms.Select, choices=chest_pain_type_choice)
     fasting_blood_sugar = forms.ChoiceField(widget=forms.Select, choices=fasting_blood_sugar_choice)
     resting_ecg = forms.ChoiceField(widget=forms.Select, choices=resting_ecg_choice)

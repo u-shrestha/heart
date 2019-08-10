@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Heart, Register
+from home.models import Doctor, Hospital
 from django import forms
 from .forms import Heart_form, UserLoginForm, UserRegisterForm
 from predict import predict
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash, get_user_model
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
@@ -15,16 +16,21 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
-
+from django.db.models import Q
+from itertools import chain
 
 # Create your views here.
 fin = []
 
+
+@login_required
 def index(request):
     form = Heart_form()
+    # name = request.user
 
     if request.method == 'POST':
         form = Heart_form(request.POST)
+
         data = request.POST
 
         age = data.__getitem__('age')
@@ -72,11 +78,10 @@ def index(request):
             fin.clear()
             return result
         else:
-            print(fin)
             print("Form validation failed")
 
 
-    return render(request, "prediction/predict.html", {'form': form})
+    return render(request, "prediction/predict.html", {'form': form })
 
 
 
@@ -216,10 +221,10 @@ def history(request):
     return render(request, 'prediction/history.html', context)
 
 
-def history_detail(request,id):
-    data=get_object_or_404(Heart,id=id)
+def history_detail(request, id):
+    data=get_object_or_404(Heart, id=id)
     context={'data':data }
-    return render(request,'prediction/historyDetail.html',context)
+    return render(request, 'prediction/history_detail.html', context)
 
 # logout user
 def logout_view(request):
@@ -227,6 +232,30 @@ def logout_view(request):
     return redirect('login')
 
 
-def user(request):
-    list = Register.objects.all()
-    return render(request, 'prediction/user_detail.html', {'list':list})
+def attribute(request):
+    return render(request, 'prediction/attribute.html')
+
+
+def user(request, user_id):
+    list = Register.objects.filter(id=user_id)
+    user = User.objects.all()
+    # list = Register.objects.filter(pk=user_id)
+    return render(request, 'prediction/user_detail.html', {'list':list, 'user':user})
+
+
+def search(request):
+    if request.method == 'POST':
+        srch = request.POST['q']
+        if srch:
+            match = list(chain(Hospital.objects.filter(Q(name__icontains=srch) | Q(location__icontains=srch)),
+                               Doctor.objects.filter(Q(name__icontains=srch))))
+            if match:
+                return render(request, 'prediction/search.html', {'search_result_list': match, 'search_count': len(match) , 'search_word': srch })
+
+            else:
+                messages.error(request, 'No result found.')
+        else:
+            return redirect('home')
+
+    return render(request, 'prediction/search.html')
+

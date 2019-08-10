@@ -12,11 +12,17 @@
 
 {% block page-body %}
     {% for i in list %}
-        <span>{{ i.username }}</span><br>
-        <span>{{ i.email_address }}</span><br>
-        <span>{{ i.date_of_birth }}</span><br>
+        <span>{{ i.username }}</span>
+        <span>{{ i.email_address }}</span>
+        <span>{{ i.date_of_birth }}</span>
         <span>{{ i.gender }}</span><br><br>
     {% endfor %}
+{#    {% for i in user %}#}
+{#        <span>{{ i.username }}</span>#}
+{#        <span>{{ i.email }}</span>#}
+{#        <span>{{ i.date_of_birth }}</span>#}
+{#        <span>{{ i.gender }}</span><br><br>#}
+{#    {% endfor %}#}
 {% endblock %}
 
 {% block page-footer %}
