@@ -67,7 +67,6 @@ def index(request):
         fin.append(thalassemia)
 
         if form.is_valid():
-            print(fin)
             form.save(commit=True)
             result = heart_predict(request)
             fin.clear()

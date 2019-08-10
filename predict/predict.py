@@ -13,7 +13,7 @@ def predict(li):
 	input_data = np.array(li).reshape(1, -1)
 	result = clf.predict(input_data)
 
-	if result == 1:
-		return "true"
-	else:
+	if result == 0:
 		return "false"
+	else:
+		return "true"
