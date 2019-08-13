@@ -18,26 +18,32 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.db.models import Q
 from itertools import chain
+import pandas as pd
 
 # Create your views here.
 fin = []
+
+def cal_age(dob):
+    return (pd.to_datetime('today').year - pd.to_datetime(dob).year)
 
 
 @login_required
 def index(request):
     form = Heart_form()
-    # name = request.user
 
     if request.method == 'POST':
         form = Heart_form(request.POST)
-
+        username = request.user.username
+        q = Register.objects.get(username=username)
         data = request.POST
 
-        age = data.__getitem__('age')
+        # get age of user
+        dob = q.date_of_birth
+        age = str(cal_age(dob))
         fin.append(age)
 
-        sex = data.__getitem__('sex')
-        fin.append(sex)
+        # get gender of user
+        fin.append(str(q.gender))
 
         chest_pain_type = data.__getitem__('chest_pain_type')
         fin.append(chest_pain_type)
@@ -75,12 +81,14 @@ def index(request):
         if form.is_valid():
             fs = form.save(commit=False)
             fs.name = request.user.username
+            fs.sex = q.gender
+            fs.age = age
             fs.save()
             result = heart_predict(request)
             fin.clear()
             return result
         else:
-            print("Form validation failed")
+            return HttpResponse("Sorry some error occured. Please try again!")
 
     return render(request, "prediction/predict.html", {'form': form })
 

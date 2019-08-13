@@ -57,7 +57,12 @@ class Heart_form(ModelForm):
 
     class Meta:
         model = Heart
-        fields = '__all__'
+        fields = [
+            'chest_pain_type', 'resting_bloodpressure',
+            'serum_cholestrol', 'fasting_blood_sugar',
+            'resting_ecg', 'max_heartrate', 'exercise_induced_angina',
+            'oldpeak', 'slope', 'no_of_major_vessel', 'thalassemia'
+        ]
 
 
 class UserLoginForm(forms.Form):

@@ -51,22 +51,8 @@
                                             {% endfor %}
                                             {% for field in form.visible_fields %}
                                                 <div class="form-group">
-
-                                                    {% if field.label == 'Name' %}
-                                                        {% if not user.is_authenticated %}
-                                                            {{ field.label_tag }}
-                                                            {% render_field field class="form-control" %}
-                                                        {% endif %}
-
-                                                    {% else %}
-                                                        {{ field.label_tag }}
-                                                        {% if field.label == 'Age' or field.label == 'Sex' %}
-                                                            {% render_field field class="form-control"  %}
-                                                        {% else %}
-                                                            {% render_field field class="form-control" %}
-                                                        {% endif %}
-
-                                                    {% endif %}
+                                                    {{ field.label_tag }}
+                                                    {% render_field field class="form-control" %}
                                                 </div>
                                             {% endfor %}
                                             <div class="form-group">
