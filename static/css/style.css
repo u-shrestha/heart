@@ -24,6 +24,10 @@
     color: #fff;
 }
 
+form.form-group.input {
+	width: 225px;
+}
+
 .bg-dark {
     background-color: #a91623!important;
 }

@@ -21,16 +21,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog' %}"><i class="fas fa-newspaper"></i> Blogs</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% if not user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}"><i class="fas fa-sign-out-alt"></i> Signup</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-user"></i> {{ request.user }}</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <form class="form-group input" action="/search/" method="post">
+                        {% csrf_token %}
+                        <input class="form-control" name="q" type="search" placeholder="Search Hospitals or Doctors">
+                    </form>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}"><i class="fas fa-sign-in-alt"></i> Signup</a>
-                </li>
-                <form class="form-group" action="/search/" method="post">
-                    {% csrf_token %}
-                    <input class="form-control" name="q" type="search" placeholder="Search">
-                </form>
             </ul>
         </div>
     </nav>

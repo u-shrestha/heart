@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Heart(models.Model):
-    name =models.ForeignKey(User, related_name='Heart.name+', on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=20, default=None, null=True, blank=True)
     age = models.IntegerField(default=0)
     sex = models.IntegerField(default=0)
     chest_pain_type = models.FloatField(default=0)
@@ -20,15 +20,8 @@ class Heart(models.Model):
     thalassemia = models.FloatField(default=0)
     created = models.DateTimeField(auto_now_add=True,null=True)
 
-
-
-class Register(models.Model):
-    username = models.CharField(max_length=20)
-    email_address = models.EmailField()
-    password = models.CharField(max_length=10)
-    confirm_password = models.CharField(max_length=10)
-    date_of_birth = models.DateField()
-    gender = models.CharField(max_length=6)
-
     def __str__(self):
-        return self.username
+        return self.name
+
+
+

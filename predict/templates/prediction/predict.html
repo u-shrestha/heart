@@ -53,7 +53,7 @@
                                                 <div class="form-group">
 
                                                     {% if field.label == 'Name' %}
-                                                        {% if user.is_authenticated %}
+                                                        {% if not user.is_authenticated %}
                                                             {{ field.label_tag }}
                                                             {% render_field field class="form-control" %}
                                                         {% endif %}

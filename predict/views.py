@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Heart, Register
-from home.models import Doctor, Hospital
+from .models import Heart
+from home.models import Doctor, Hospital, Register
 from django import forms
 from .forms import Heart_form, UserLoginForm, UserRegisterForm
 from predict import predict
@@ -73,13 +73,14 @@ def index(request):
         fin.append(thalassemia)
 
         if form.is_valid():
-            form.save(commit=True)
+            fs = form.save(commit=False)
+            fs.name = request.user.username
+            fs.save()
             result = heart_predict(request)
             fin.clear()
             return result
         else:
             print("Form validation failed")
-
 
     return render(request, "prediction/predict.html", {'form': form })
 
@@ -153,7 +154,10 @@ def register_view(request):
             # login(request, User.objects.create_user(username, email_address, password))
             # return redirect('dashboard')
         else:
-            messages.error(request, 'username already exists')
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'username already exists')
+            elif User.objects.filter(email=email_address).exists():
+                messages.error(request, 'email already exists')
             form = UserRegisterForm()
 
     elif form.errors:
@@ -215,6 +219,23 @@ def dashboard(request):
     return render(request, 'prediction/dashboard.html')
 
 
+def search(request):
+    if request.method == 'POST':
+        srch = request.POST['q']
+        if srch:
+            match = list(chain(Hospital.objects.filter(Q(name__icontains=srch) | Q(location__icontains=srch)),
+                               Doctor.objects.filter(Q(name__icontains=srch))))
+            if match:
+                return render(request, 'prediction/search.html', {'search_result_list': match, 'search_count': len(match) , 'search_word': srch })
+
+            else:
+                messages.error(request, 'No result found.')
+        else:
+            return redirect('home')
+
+    return render(request, 'prediction/search.html')
+
+
 def history(request):
     history_list = Heart.objects.all()
     context = {'history_list': history_list }
@@ -243,19 +264,5 @@ def user(request, user_id):
     return render(request, 'prediction/user_detail.html', {'list':list, 'user':user})
 
 
-def search(request):
-    if request.method == 'POST':
-        srch = request.POST['q']
-        if srch:
-            match = list(chain(Hospital.objects.filter(Q(name__icontains=srch) | Q(location__icontains=srch)),
-                               Doctor.objects.filter(Q(name__icontains=srch))))
-            if match:
-                return render(request, 'prediction/search.html', {'search_result_list': match, 'search_count': len(match) , 'search_word': srch })
 
-            else:
-                messages.error(request, 'No result found.')
-        else:
-            return redirect('home')
-
-    return render(request, 'prediction/search.html')
 
