@@ -55,44 +55,47 @@ a.btn.btn-primary {
 	box-shadow: none;
 }
 
-/*a.btn.btn-primary.dashboard {*/
-	/*background-color: #a91623;*/
-    /*border-color: #ad0411;*/
-	/*font-size: 20px;*/
-	/*color: #fff;*/
-	/*width: 100%;*/
-	/*height: 150px;*/
+#dot li {
+  	width: 10px ;
+  	height: 10px ;
+  	border-radius: 100%;
+}
+
+.bg {
+	background-color: #ffffff;
+}
+
+.bg_c {
+    background-color: #1f2678 !important;
+}
+
+/*.zoom {*/
+  /*padding: 30px;*/
+  /*transition: transform .2s; !* Animation *!*/
+
 /*}*/
 
-/*a.btn.btn-danger.dashboard {*/
-	/*font-size: 18px;*/
-	/*color: #fff;*/
-	/*width: 100%;*/
-	/*height: 130px;*/
+/*.zoom:hover {*/
+  /*transform: scale(1.1); !* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) *!*/
 /*}*/
 
-/*a.btn.btn-info.dashboard {*/
-	/*font-size: 18px;*/
-	/*color: #fff;*/
-	/*width: 100%;*/
-	/*height: 130px;*/
-/*}*/
+#bg_c:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
 
+.img_c {
+	height: 80px;
+	width: 80px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-/*a.btn.btn-primary.dashboard:hover  {*/
-	/*background-color: #a91623;*/
-/*}*/
+#bg_c {
+    background-color: #ffdcd6;
+}
 
-/*a.btn.btn-danger.dashboard:hover {*/
-	/*background-color: #a91623;*/
-/*}*/
-
-/*a.goback {*/
-	/*font-weight: bold;*/
-	/*font-size: 20px;*/
-	/*font-family: Sans-Serif;*/
-	/*text-decoration: underline;*/
-/*}*/
 
 .page-item.active .page-link {
 	background-color: #a91623;
@@ -102,35 +105,6 @@ a.btn.btn-primary {
 .primary-color {
 	background-color: #a91623;
 }
-
-/*.jumbotron {*/
-	/*background-color: #a91623;*/
-	/*!*background-image: url("../image/work-731198_1920.jpg");*!*/
-	/*opacity: 0.8;*/
-	/*margin-bottom: 3px;*/
-/*}*/
-
-/*.blockquote p, .blockquote footer {*/
-	/*color: #fff;*/
-/*}*/
-
-/*.fas.fa-book-reader, .fas.fa-futbol, .fas.fa-microphone, .fas.fa-desktop {*/
-	/*font-size: 300%;*/
-	/*color: #a91623;*/
-/*}*/
-
-/*.facility-title, .h1 {*/
-	/*color: #a91623;*/
-/*}*/
-
-/*.col-lg-3.col-md-3.col-sm-3.text-center {*/
-	/*transition: 0.3s;*/
-	/*overflow: hidden;*/
-/*}*/
-
-/*.col-lg-3.col-md-3.col-sm-3.text-center:hover {*/
-	/*transform: scale(1.1);*/
-/*}*/
 
 .fas.fa-quote-left, .fas.fa-quote-right {
 	font-size: 30px;
@@ -147,10 +121,6 @@ label.btn {
 	color: white;
 	font-size: 18px;
 }
-
-/*img.card-img {*/
-	/*opacity: 0.9;*/
-/*}*/
 
 h1 {
 	color: #a91623;

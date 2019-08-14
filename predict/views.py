@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Heart
+from .models import Heart, Attribute
 from home.models import Doctor, Hospital, Register
 from django import forms
 from .forms import Heart_form, UserLoginForm, UserRegisterForm
@@ -243,6 +243,25 @@ def search(request):
 
     return render(request, 'prediction/search.html')
 
+# logout user
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
+def attribute(request):
+    attribute_list = Attribute.objects.all()
+    return render(request, 'prediction/attribute.html', {'attribute_list': attribute_list})
+
+
+def attribute_detail(request, slug):
+    q = Attribute.objects.filter(slug__iexact=slug)
+    if q.exists():
+        q = q.first()
+    else:
+        return HttpResponse('<h1>Post Not Found</h1>')
+    return render(request, 'prediction/attribute_detail.html', {'post': q })
+
 
 def history(request):
     history_list = Heart.objects.all()
@@ -255,21 +274,17 @@ def history_detail(request, id):
     context={'data':data }
     return render(request, 'prediction/history_detail.html', context)
 
-# logout user
-def logout_view(request):
-    logout(request)
-    return redirect('login')
 
 
-def attribute(request):
-    return render(request, 'prediction/attribute.html')
 
-
-def user(request, user_id):
-    list = Register.objects.filter(id=user_id)
-    user = User.objects.all()
-    # list = Register.objects.filter(pk=user_id)
-    return render(request, 'prediction/user_detail.html', {'list':list, 'user':user})
+# def uattribute(request):
+#     return render(request, 'prediction/usha_attributes.html')
+#
+# def user(request, user_id):
+#     list = Register.objects.filter(id=user_id)
+#     user = User.objects.all()
+#     # list = Register.objects.filter(pk=user_id)
+#     return render(request, 'prediction/user_detail.html', {'list':list, 'user':user})
 
 
 

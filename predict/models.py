@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from heart import util
 
 # Create your models here.
 
@@ -24,4 +25,17 @@ class Heart(models.Model):
         return self.name
 
 
+class Attribute(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, null=True, blank=True)
+    description = models.TextField(blank=True)
+    visualization = models.ImageField(upload_to='attributes', blank=True)
 
+    def __str__(self):
+        return self.title
+
+
+# def pre_save_receiver(sender, instance, *args, **kwargs):
+#     if not instance.slug:
+#         instance.slug = unique_slug_generator(instance)
+# pre_save.connect(pre_save_receiver, sender=Post)

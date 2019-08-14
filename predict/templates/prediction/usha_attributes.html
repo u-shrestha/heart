@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page-title %}
+    Attributes
+{% endblock %}
+
+{#{% block page-header %}#}
+{#    {% include 'header.html' %}#}
+{#{% endblock %}#}
+
+{% block page-body %}
+    <div class="container">
+        <div class="row gallery">
+            <a href="{% static 'graph/age.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/age.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/Sex.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/Sex.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/chestpain.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/chestpain.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/chol.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/chol.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/ecg.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/ecg.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/exercise.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/exercise.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/Fbs.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/Fbs.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/h_rate.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/h_rate.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/pressure.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/pressure.png' %}" alt="Another alt text">
+            </a>
+            <a href="{% static 'graph/Thal.png' %}" class="col-md-4">
+                <img class="img-thumbnail" src="{% static 'graph/Thal.png' %}" alt="Another alt text">
+            </a>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block page-footer %}
+    {% include 'footer.html' %}
+{% endblock %}
