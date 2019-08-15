@@ -1,4 +1,4 @@
-input_data = open("D:\Zzz Project\AAA practise\disease_prediction\prediction\heart.csv", "r").read().split("\n")
+input_data = open("C:\\Users\Sakun\Desktop\Project\heart\predict\heart.csv", "r").read().split("\n")
 features = input_data[0].split(",")
 
 del features[-1]

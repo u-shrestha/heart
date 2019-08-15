@@ -65,19 +65,16 @@ a.btn.btn-primary {
 	background-color: #ffffff;
 }
 
-.bg_c {
-    background-color: #1f2678 !important;
+.card-img.avatar {
+	vertical-align: middle;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
 }
 
-/*.zoom {*/
-  /*padding: 30px;*/
-  /*transition: transform .2s; !* Animation *!*/
-
-/*}*/
-
-/*.zoom:hover {*/
-  /*transform: scale(1.1); !* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) *!*/
-/*}*/
+.shadow {
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.10)!important;
+}
 
 #bg_c:hover {
 	transform: scale(1.05);
