@@ -3,18 +3,18 @@
 {% load widget_tweaks %}
 
 {% block page-title %}
-    Dashboard
+    {{ request.user.username }} | Attribute | {{ post.title }}
 {% endblock %}
 
 {% block page-header %}
     {% include 'header.html' %}
 {% endblock %}
 
-
 {% block page-body %}
     <div class="container">
         <div class="row mt-3">
             <div class="col-12 text-justify">
+                <a href="{% url 'attribute' %}">&larr;Go back</a>
                 <h2>{{ post.title }}</h2>
                 <hr class="mx-auto">
                 <p>{{ post.description|linebreaks }}</p>

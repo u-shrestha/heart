@@ -3,7 +3,7 @@
 {% load widget_tweaks %}
 
 {% block page-title %}
-    Dashboard
+    {{ request.user.username }} | Dashboard
 {% endblock %}
 
 {% block page-header %}

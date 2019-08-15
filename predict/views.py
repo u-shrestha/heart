@@ -233,6 +233,7 @@ def search(request):
         if srch:
             match = list(chain(Hospital.objects.filter(Q(name__icontains=srch) | Q(location__icontains=srch)),
                                Doctor.objects.filter(Q(name__icontains=srch))))
+
             if match:
                 return render(request, 'prediction/search.html', {'search_result_list': match, 'search_count': len(match) , 'search_word': srch })
 

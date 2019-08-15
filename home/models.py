@@ -4,6 +4,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
+    slug = models.SlugField(null=True)
     detail = models.TextField(default='')
     image = models.FileField(upload_to='articles')
     date = models.DateField(auto_now_add=True)
@@ -17,7 +18,9 @@ class Article(models.Model):
 
 class Hospital(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(null=True)
     location = models.CharField(max_length=100)
+    details = models.TextField(blank=True)
     phone_number = models.CharField(max_length=20)
     phone_number2 = models.CharField(max_length=20, blank=True)
     phone_number3 = models.CharField(max_length=20, blank=True)
@@ -30,6 +33,7 @@ class Hospital(models.Model):
 
 class Doctor(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(null=True)
     qualification = models.CharField(max_length=150, blank=True)
     details = models.TextField(blank=True)
     hospital = models.ForeignKey(Hospital, on_delete=models.PROTECT, null=True, blank=True)

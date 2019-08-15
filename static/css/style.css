@@ -96,6 +96,13 @@ a.btn.btn-primary {
     background-color: #ffdcd6;
 }
 
+i.fas.fa-hand-point-up.fa-7x {
+    color: #00b0f0;
+}
+
+div#img_f {
+    text-align: center;
+}
 
 .page-item.active .page-link {
 	background-color: #a91623;
