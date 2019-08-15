@@ -1,3 +1,6 @@
+/*red: #A91623;*/
+
+/* Navigation bar */
 .navbar-dark .navbar-nav .nav-link {
 	font-size: 18px;
 	color: #fff;
@@ -19,34 +22,48 @@
 	margin: 5px;
 }
 
+.bg-dark {
+	background-color: #0c608c!important;
+}
+
+
+/* Carousel text and button */
+.h2.home {
+	color: #a91623;
+}
+
+.btn.btn-primary.home {
+	background-color: yellow;
+	color: black;
+}
+
+/* Footer */
 .unique-color-dark {
-    background-color: #a91623;
+	background-color: #0c608c;
     color: #fff;
 }
 
+/* Search input box */
 form.form-group.input {
 	width: 225px;
 }
 
-.bg-dark {
-    background-color: #a91623!important;
-}
-
+/* Buttons of form */
 a.btn.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    background-color: #a91623;
-    border-color: #a91623;
+    background-color: #0c608c;
+    border-color: #0c608c;
 }
 
 button.btn.btn-primary {
-	background-color: #a91623;
-    border-color: #a91623;
+	background-color: #0c608c;
+    border-color: #0c608c;
 	font-size: 18px;
 	color: #fff;
 }
 
 a.btn.btn-primary {
-	background-color: #a91623;
-    border-color: #a91623;
+	background-color: #0c608c;
+    border-color: #0c608c;
 	font-size: 18px;
 	color: #fff;
 }
@@ -55,6 +72,8 @@ a.btn.btn-primary {
 	box-shadow: none;
 }
 
+
+/* Home page css */
 #dot li {
   	width: 10px ;
   	height: 10px ;
@@ -77,7 +96,7 @@ a.btn.btn-primary {
 }
 
 #bg_c:hover {
-	transform: scale(1.05);
+	transform: scale(1.02);
 	transition: transform .3s;
 }
 
@@ -101,33 +120,35 @@ div#img_f {
     text-align: center;
 }
 
+
+/* Pagination css */
 .page-item.active .page-link {
-	background-color: #a91623;
+	background-color: #0c608c;
     border-color: #4478ad;
 }
 
-.primary-color {
-	background-color: #a91623;
-}
+/*.primary-color {*/
+	/*background-color: #0c608c;*/
+/*}*/
 
 .fas.fa-quote-left, .fas.fa-quote-right {
 	font-size: 30px;
 }
 
-.no-padding {
-	padding-right: 2px;
-	padding-left: 2px;
-	margin-bottom: 0;
-}
+/*.no-padding {*/
+	/*padding-right: 2px;*/
+	/*padding-left: 2px;*/
+	/*margin-bottom: 0;*/
+/*}*/
 
-label.btn {
-	background-color: #a91623;
-	color: white;
-	font-size: 18px;
-}
+/*label.btn {*/
+	/*background-color: #0c608c;*/
+	/*color: white;*/
+	/*font-size: 18px;*/
+/*}*/
 
 h1 {
-	color: #a91623;
+	color: #0c608c;
 }
 
 .form-group {
@@ -138,33 +159,12 @@ h1 {
     width: 100%;
 }
 
-
-.dashboard .card-img-block{
-    /*float:left;*/
-    /*width:100%;*/
-    /*height:150px;*/
-	position:relative;
-    /*overflow:hidden;*/
-}
-
-.dashboard .profile {
-	border-radius: 50%;
-	position: absolute;
-	bottom: -20px;
-	left: 20%;
-	max-width: 100px;
-	border: 3px solid rgba(255, 255, 255, 1);
-	-webkit-transform: translate(-50%, 0%);
-	transform: translate(-50%, 0%);
-}
-
-.dashboard h5 {
-    font-weight:600;
-    /*color:#6ab04c;*/
-}
-
 a.signup {
     font-weight: 600;
+}
+
+a.attr {
+	font-size: 20px;
 }
 
 .dropdown-menu {

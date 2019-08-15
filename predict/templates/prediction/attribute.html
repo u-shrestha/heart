@@ -38,11 +38,11 @@
             </div>
 
             <div class="col-12 col-md-8">
-                <ol>
+                <ul>
                     {% for attribute in attribute_list %}
-                        <li><a href="/myaccount/attribute/{{ attribute.slug }}">{{ attribute.title }}</a></li>
+                        <li><a href="/myaccount/attribute/{{ attribute.slug }}" class="attr">{{ attribute.title }}</a></li>
                     {% endfor %}
-                </ol>
+                </ul>
             </div>
         </div>
     </div>

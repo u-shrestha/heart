@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Heart, Attribute
 from home.models import Doctor, Hospital, Register
-from django import forms
 from .forms import Heart_form, UserLoginForm, UserRegisterForm
 from predict import predict
 from django.contrib.auth.models import User
@@ -19,6 +18,9 @@ from django.core.mail import EmailMessage
 from django.db.models import Q
 from itertools import chain
 import pandas as pd
+from matplotlib import pyplot as plt
+import os
+from django.conf import settings
 
 # Create your views here.
 fin = []
@@ -158,9 +160,6 @@ def register_view(request):
             email = EmailMessage(mail_subject, message, to=[to_email])
             email.send()
             return HttpResponse('Please confirm your email address to complete the registration')
-            # login after sign up
-            # login(request, User.objects.create_user(username, email_address, password))
-            # return redirect('dashboard')
         else:
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'username already exists')
@@ -199,7 +198,7 @@ def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
-            # retriving username and new passwords to update it in model
+            # retrieving username and new passwords to update it in model
             username_user = str(User.objects.filter(username=request.user).get())
             username_register = str(Register.objects.filter(username=username_user).get())
             userObj = form.cleaned_data
@@ -233,10 +232,8 @@ def search(request):
         if srch:
             match = list(chain(Hospital.objects.filter(Q(name__icontains=srch) | Q(location__icontains=srch)),
                                Doctor.objects.filter(Q(name__icontains=srch))))
-
             if match:
                 return render(request, 'prediction/search.html', {'search_result_list': match, 'search_count': len(match) , 'search_word': srch })
-
             else:
                 messages.error(request, 'No result found.')
         else:
@@ -265,28 +262,55 @@ def attribute_detail(request, slug):
 
 
 def history(request):
-    history_list = Heart.objects.all()
-    context = {'history_list': history_list }
-    return render(request, 'prediction/history.html', context)
+    ihistory = Heart.objects.filter(name=request.user)
+    chol = []
+    pressure = []
+    max_rate = []
+    date = []
+    for i in ihistory:
+        chol.append(i.serum_cholestrol)
+        pressure.append(i.resting_bloodpressure)
+        max_rate.append(i.max_heartrate)
+        date.append(i.created.strftime('%Y/%m/%d'))
 
+    # for plotting the history of user in line graph
+    # serum choloestrol
+    df = pd.DataFrame(data={"date": date, "att_val": chol})
+    df.to_csv("chol.csv", sep=',', index=False)
 
-def history_detail(request, id):
-    data=get_object_or_404(Heart, id=id)
-    context={'data':data }
-    return render(request, 'prediction/history_detail.html', context)
+    df = pd.read_csv('chol.csv', parse_dates=True, index_col='date', sep=",")
+    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
+    plt.title("Serum Cholesterol Data")
+    plt.ylabel("Values")
+    plt.xlabel("Dates")
+    plt.legend(["chol"])
+    plt.savefig(os.path.join(settings.BASE_DIR, 'static/graph/chol.png'))
+    plt.close()
 
+    # blood pressure
+    df = pd.DataFrame(data={"date": date, "att_val": pressure})
+    df.to_csv("pressure.csv", sep=',', index=False)
 
+    df = pd.read_csv('pressure.csv', parse_dates=True, index_col='date', sep=",")
+    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
+    plt.title("Blood Pressure Data")
+    plt.ylabel("Values")
+    plt.xlabel("Dates")
+    plt.legend(["bp"])
+    plt.savefig(os.path.join(settings.BASE_DIR, 'static/graph/press.png'))
+    plt.close()
 
+    # maximum heart rate
+    df = pd.DataFrame(data={"date": date, "att_val": max_rate})
+    df.to_csv("max_rate.csv", sep=',', index=False)
 
-# def uattribute(request):
-#     return render(request, 'prediction/usha_attributes.html')
-#
-# def user(request, user_id):
-#     list = Register.objects.filter(id=user_id)
-#     user = User.objects.all()
-#     # list = Register.objects.filter(pk=user_id)
-#     return render(request, 'prediction/user_detail.html', {'list':list, 'user':user})
+    df = pd.read_csv('max_rate.csv', parse_dates=True, index_col='date', sep=",")
+    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
+    plt.title("Maximun Heart Rate Achieved")
+    plt.ylabel("Values")
+    plt.xlabel("Dates")
+    plt.legend(["heart-rate"])
+    plt.savefig(os.path.join(settings.BASE_DIR, 'static\graph\h_rate.png'))
+    plt.close()
 
-
-
-
+    return render(request, 'prediction/history.html')

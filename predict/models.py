@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 from django.contrib.auth.models import User
 from heart import util
@@ -19,7 +20,7 @@ class Heart(models.Model):
     slope = models.FloatField(default=0)
     no_of_major_vessel = models.FloatField(default=0)
     thalassemia = models.FloatField(default=0)
-    created = models.DateTimeField(auto_now_add=True,null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

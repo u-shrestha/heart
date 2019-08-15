@@ -7,11 +7,8 @@ urlpatterns = [
     path('changepassword/', views.change_password, name='changepassword'),
     path('predict_disease/', views.index, name='predict'),
     path('myhistory/', views.history, name='history'),
-    path('myhistory/<id>/', views.history_detail, name='history_detail'),
     path('attribute/', views.attribute, name='attribute'),
     path('attribute/<slug>/', views.attribute_detail, name='attr_detail'),
-    # path('usha_attribute/', views.uattribute, name='uattribute'),
-    # path('user/<user_id>', views.user, name='user'),
     path('activate/(P<uidb64>[0-9A-Za-z_\\-]+)/(P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          views.activate, name='activate'),
 

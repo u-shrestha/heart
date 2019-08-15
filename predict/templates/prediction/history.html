@@ -6,6 +6,10 @@
     {{ request.user.username }} | History
 {% endblock %}
 
+{% block page-css-js %}
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/magnific-popup.css' %}">
+{% endblock %}
+
 {% block page-header %}
     {% include 'header.html' %}
 {% endblock %}
@@ -37,20 +41,22 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-8">
-                {% for history in history_list %}
-                    {% if history.name == request.user.username %}
-                        <div class="col-md-6">
-                            <div class="img-thumbnail">
-                                Date:{{ history.created }}
-                                <br>
-                                <a href="{% url 'history_detail' history.id %}">DETAIL</a>
-                                <br>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+            <div class="col-12 col-md-8 gallery">
+                <a href="{% static 'graph/chol.png' %}" class="col-md-4">
+                    <img class="img-thumbnail" src="{% static 'graph/chol.png' %}">
+                </a>
+                <a href="{% static 'graph/press.png' %}" class="col-md-4">
+                    <img class="img-thumbnail" src="{% static 'graph/press.png' %}">
+                </a>
+                <a href="{% static 'graph/h_rate.png' %}" class="col-md-4">
+                    <img class="img-thumbnail" src="{% static 'graph/h_rate.png' %}">
+                </a>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block page-footer %}
+    <script type="text/javascript" src="{% static 'vendor/jquery.magnific-popup.min.js' %}"></script>
+    <script type="text/javascript" src= "{% static 'js/gallery.js' %}"></script>
 {% endblock %}
