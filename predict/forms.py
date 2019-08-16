@@ -10,21 +10,19 @@ gender = [
 ]
 
 chest_pain_type_choice = [
-    ('1', 'typical angina'),
-    ('2', 'atypical angina'),
-    ('3', 'non-anginal pain'),
-    ('4', 'asymptotic')
+    ('1', 'Typical angina'),
+    ('2', 'Atypical angina'),
+    ('3', 'Non-anginal pain')
 ]
 
 fasting_blood_sugar_choice = [
-    ('1', 'True'),
-    ('0', 'False')
+    ('1', 'Yes'),
+    ('0', 'No')
 ]
 
 resting_ecg_choice = [
-    ('0', 'normal'),
-    ('1', 'ST-T wave abnormality'),
-    ('2', 'left ventricular hyperthrophy')
+    ('0', 'Normal'),
+    ('1', 'Abnormal'),
 ]
 
 exercise_induced_angina_choice = [
@@ -33,15 +31,21 @@ exercise_induced_angina_choice = [
 ]
 
 slope_choice = [
-    ('1', 'upsloping'),
-    ('2', 'flat'),
-    ('3', 'downsloping')
+    ('0', 'Upsloping'),
+    ('1', 'Flat'),
+    ('2', 'Downsloping')
+]
+
+no_of_major_vessel = [
+    ('0', '0'),
+    ('1', '1'),
+    ('2', '2')
 ]
 
 thalassemia_choice = [
-    ('3', 'normal'),
-    ('6', 'fixed defect'),
-    ('7', 'reversable defect')
+    ('1', 'Normal'),
+    ('2', 'Alpha Thalassemia'),
+    ('3', 'Beta Thalassemia')
 ]
 
 User = get_user_model()
@@ -53,6 +57,7 @@ class Heart_form(ModelForm):
     resting_ecg = forms.ChoiceField(widget=forms.Select, choices=resting_ecg_choice)
     exercise_induced_angina = forms.ChoiceField(widget=forms.Select, choices=exercise_induced_angina_choice)
     slope = forms.ChoiceField(widget=forms.Select, choices=slope_choice)
+    no_of_major_vessel = forms.ChoiceField(widget=forms.Select, choices=no_of_major_vessel)
     thalassemia = forms.ChoiceField(widget=forms.Select, choices=thalassemia_choice)
 
     class Meta:
