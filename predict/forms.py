@@ -10,9 +10,10 @@ gender = [
 ]
 
 chest_pain_type_choice = [
-    ('1', 'Typical angina'),
-    ('2', 'Atypical angina'),
-    ('3', 'Non-anginal pain')
+    ('0', 'Typical angina'),
+    ('1', 'Atypical angina'),
+    ('2', 'Non-anginal pain'),
+    ('3', 'Asymptotic')
 ]
 
 fasting_blood_sugar_choice = [
@@ -22,7 +23,8 @@ fasting_blood_sugar_choice = [
 
 resting_ecg_choice = [
     ('0', 'Normal'),
-    ('1', 'Abnormal'),
+    ('1', 'ST-T wave abnormality'),
+    ('2', 'Left venticular hypertropy')
 ]
 
 exercise_induced_angina_choice = [
