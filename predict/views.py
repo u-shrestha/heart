@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Heart, Attribute
 from home.models import Doctor, Hospital, Register
@@ -18,13 +18,12 @@ from django.core.mail import EmailMessage
 from django.db.models import Q
 from itertools import chain
 import pandas as pd
-from matplotlib import pyplot as plt
-import os
-from django.conf import settings
+from . import line_graph
 
 # Create your views here.
 fin = []
 
+# funtion to calculate age from given date of birth
 def cal_age(dob):
     return (pd.to_datetime('today').year - pd.to_datetime(dob).year)
 
@@ -261,6 +260,7 @@ def attribute_detail(request, slug):
     return render(request, 'prediction/attribute_detail.html', {'post': q })
 
 
+# view for user history line graph plot
 def history(request):
     ihistory = Heart.objects.filter(name=request.user)
     chol = []
@@ -271,46 +271,9 @@ def history(request):
         chol.append(i.serum_cholestrol)
         pressure.append(i.resting_bloodpressure)
         max_rate.append(i.max_heartrate)
-        date.append(i.created.strftime('%Y/%m/%d'))
+        date.append(i.created.strftime('%Y-%m-%d'))
 
     # for plotting the history of user in line graph
-    # serum choloestrol
-    df = pd.DataFrame(data={"date": date, "att_val": chol})
-    df.to_csv("chol.csv", sep=',', index=False)
-
-    df = pd.read_csv('chol.csv', parse_dates=True, index_col='date', sep=",")
-    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
-    plt.title("Serum Cholesterol Data")
-    plt.ylabel("Values")
-    plt.xlabel("Dates")
-    plt.legend(["chol"])
-    plt.savefig(os.path.join(settings.BASE_DIR, 'static/graph/chol.png'))
-    plt.close()
-
-    # blood pressure
-    df = pd.DataFrame(data={"date": date, "att_val": pressure})
-    df.to_csv("pressure.csv", sep=',', index=False)
-
-    df = pd.read_csv('pressure.csv', parse_dates=True, index_col='date', sep=",")
-    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
-    plt.title("Blood Pressure Data")
-    plt.ylabel("Values")
-    plt.xlabel("Dates")
-    plt.legend(["bp"])
-    plt.savefig(os.path.join(settings.BASE_DIR, 'static/graph/press.png'))
-    plt.close()
-
-    # maximum heart rate
-    df = pd.DataFrame(data={"date": date, "att_val": max_rate})
-    df.to_csv("max_rate.csv", sep=',', index=False)
-
-    df = pd.read_csv('max_rate.csv', parse_dates=True, index_col='date', sep=",")
-    df.plot(color='blue', marker='o', linestyle='dashed', linewidth=0.8, markersize=3)
-    plt.title("Maximun Heart Rate Achieved")
-    plt.ylabel("Values")
-    plt.xlabel("Dates")
-    plt.legend(["heart-rate"])
-    plt.savefig(os.path.join(settings.BASE_DIR, 'static\graph\h_rate.png'))
-    plt.close()
+    line_graph.get_history(chol, pressure, max_rate, date)
 
     return render(request, 'prediction/history.html')
