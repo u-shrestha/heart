@@ -41,7 +41,8 @@ slope_choice = [
 no_of_major_vessel = [
     ('0', '0'),
     ('1', '1'),
-    ('2', '2')
+    ('2', '2'),
+    ('3', '3')
 ]
 
 thalassemia_choice = [
