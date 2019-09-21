@@ -2,8 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-heart = pd.read_csv('C:\\Users\Sakun\Desktop\Project\heart\predict\heart.csv')
+heart = pd.read_csv('F:\\AI\heart\predict\heart.csv')
 wd=0.4
+
+plt.figure(figsize=(10,8))
+sns.heatmap(heart.corr(),annot=True,cmap='YlGnBu',fmt='.2f',linewidths=2)
+plt.show()
 
 plt.title('Distibution by age')
 sns.set()

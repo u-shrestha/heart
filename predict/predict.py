@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn import tree
 
-input_data = open("C:\\Users\Sakun\Desktop\Project\heart\predict\heart.csv", "r").read().split("\n")
+input_data = open("F:\\AI\heart\predict\heart.csv", "r").read().split("\n")
 features = input_data[0].split(",")
 
 del features[-1] # delete target attribute from feature list
